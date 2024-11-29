@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "https://restaurant-booking-production.up.railway.app/"; //Fallback
+const API_BASE_URL = "https://restaurant-booking-production.up.railway.app"; //Fallback
 
 const handleResponse = async (response) => {
     if (!response.ok) {

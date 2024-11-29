@@ -1,13 +1,32 @@
 import json
+import os
+from urllib.parse import urlparse
+from dotenv import load_dotenv
 import redis
 from typing import List, Optional, Union
 import logging
 
 logger = logging.getLogger(__name__)
+load_dotenv()
 
 # Initialize the Redis client
 def get_redis_client():
-    return redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
+    redis_url = os.getenv('REDIS_URL')
+    
+    # Parse the Redis URL
+    url = urlparse(redis_url)
+    redis_host = url.hostname
+    redis_port = url.port
+    redis_password = url.password
+    
+    # Connect to Redis using the parsed values
+    return redis.StrictRedis(
+        host=redis_host,
+        port=redis_port,
+        db=0,
+        password=redis_password,
+        decode_responses=True
+    )
 
 def set_data(key: str, value: list,ttl:int = 300):
     r = get_redis_client()
