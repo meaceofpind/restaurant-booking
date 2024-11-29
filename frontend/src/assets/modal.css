@@ -1,0 +1,243 @@
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* High z-index to keep it above other elements */
+}
+
+.modal-container {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  height: 80vh; /* Reasonable height for desktop */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative; /* Keeps modal centered */
+}
+
+/* Modal Header (close button) */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem; /* Match modern styling */
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Body (Main Content) */
+.modal-body {
+  width: 100%; /* Full width for content */
+  margin-bottom: 20px;
+}
+
+.restaurant-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Space below details section */
+}
+
+.restaurant-details h2 {
+  font-size: 1.5rem; /* Consistent modern font size */
+  margin-bottom: 10px;
+}
+
+.restaurant-details p {
+  font-size: 14px;
+  color: #555; /* Subtle text color for details */
+}
+
+.divider {
+  width: 1px;
+  background-color: gray;
+  margin: 0 20px;
+  height: 80%; /* Divider covers 80% of modal */
+}
+
+.available-slots {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-dropdown {
+  margin-bottom: 20px;
+}
+
+/* Added class for availability heading */
+.availability-heading {
+  margin-top: 20px; /* Space between details and availability heading */
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block; /* Ensures it takes up its own line */
+}
+
+/* Create grid for buttons below the availability heading */
+.availability-buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 columns for larger screens */
+  gap: 10px;
+  margin-top: 10px; /* Space between heading and buttons */
+}
+
+/* Style each button */
+.availability-button {
+  padding: 5px 10px;
+  font-size: 12px; /* Smaller font for buttons */
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%; /* Ensure buttons fit the grid */
+  height: 40px; /* Fixed height to prevent stretching */
+}
+
+.availability-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.availability-button:disabled {
+  background-color: #ccc;
+  color: white;
+  cursor: not-allowed;
+}
+
+.add-btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.add-btn:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Add fade-in animation for modal appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile-Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-container {
+    width: 90%; /* Adjust modal width for smaller screens */
+    height: 90vh; /* Slightly taller for smaller screens */
+    padding: 15px; /* Reduce padding on mobile */
+  }
+
+  .modal-header h2 {
+    font-size: 1.2rem; /* Smaller header font */
+  }
+
+  .modal-body p {
+    font-size: 12px; /* Adjust font size for readability */
+  }
+
+  .divider {
+    display: none; /* Hide divider on mobile */
+  }
+
+  .availability-buttons {
+    grid-template-columns: repeat(4, 1fr); /* Use 4 columns for smaller screens */
+    margin-top: 10px; /* Adds space between text and buttons */
+  }
+
+  .availability-button {
+    font-size: 12px; /* Keep button font size smaller */
+    padding: 8px 12px;
+  }
+
+  .add-btn {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%; /* Slightly narrower for very small screens */
+  }
+
+  .modal-header button {
+    font-size: 1.2rem; /* Adjust button size */
+  }
+
+  .restaurant-details h2 {
+    font-size: 1.2rem; /* Smaller restaurant name */
+  }
+
+  .restaurant-details p {
+    font-size: 12px; /* Adjust details font */
+  }
+
+  .availability-button {
+    font-size: 12px; /* Smaller button font size */
+    padding: 8px 12px;
+  }
+
+  .add-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+.booking-form {
+  margin-top: 20px;
+}
+
+.input-field {
+  margin-bottom: 10px;
+}
+
+.input-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

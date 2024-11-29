@@ -1,0 +1,128 @@
+/* Center the form container */
+.add-restaurant-form {
+  width: 100%;
+  max-width: 600px; /* Limit the width of the form */
+  margin: 0 auto; /* Center horizontally */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Style for form fields */
+.form-field {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-field input:not(.slider-checkbox) {
+  width: 100%; /* Ensure input fields fill the entire container */
+  padding: 10px;
+  font-size: 1rem;
+  margin-top: 5px;
+  border-radius: 0; /* Remove any border-radius for input fields */
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Slider for the Vegetarian Friendly field (Yes/No) */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.slider-checkbox {
+  width: 50px; /* Width of the slider */
+  height: 30px; /* Height of the slider */
+  -webkit-appearance: none; /* Remove default appearance */
+  appearance: none; /* Remove default appearance */
+  background-color: #ccc; /* Default background color */
+  border-radius: 50px; /* Make it a circular slider */
+  position: relative;
+  transition: 0.4s; /* Smooth transition for state changes */
+  cursor: pointer; /* Change cursor on hover */
+  margin-top: 5px; /* Align with other fields */
+  border: none; /* Remove border */
+  display: inline-block; /* Ensure it behaves like a checkbox */
+}
+
+
+/* Slider's circular knob */
+.slider-checkbox:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px; /* Knob width */
+  height: 24px; /* Knob height */
+  border-radius: 50%; /* Circular knob */
+  background-color: white; /* Knob color */
+  transition: 0.4s; /* Smooth transition for knob movement */
+}
+
+/* When the slider is checked, change background and move the knob */
+.slider-checkbox:checked {
+  background-color: #4CAF50; /* Green color when checked */
+}
+
+.slider-checkbox:checked:before {
+  transform: translateX(20px); /* Move the knob to the right */
+}
+
+
+/* Label next to the slider */
+.slider-label {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+/* Error message style */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Button style */
+.submitForm {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.submitForm:hover {
+  background-color: #45a049;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .form-field input {
+    font-size: 1.1rem;
+  }
+
+  .slider-checkbox {
+    width: 60px;
+    height: 35px;
+  }
+
+  .slider-checkbox::before {
+    height: 26px;
+    width: 26px;
+  }
+}

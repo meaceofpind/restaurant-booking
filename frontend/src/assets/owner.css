@@ -1,0 +1,130 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+html {
+  height: 100%;
+}
+
+/* Main container */
+.owner-page {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Tabs Container */
+.tabs {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  background-color: #333333; /* Dark background for the tab bar */
+  border-bottom: 2px solid #ccc;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #333333; /* Inactive state color (dark gray) */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  margin: 0;
+  font-weight: 600;
+  color: #f0f0f0; /* Light text color */
+}
+
+.tab.active {
+  background-color: white; /* Active tab background color */
+  color: black; /* Active tab text color */
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: white;
+  height: 100%;
+}
+
+/* Remove border-radius from input fields and buttons */
+input, button {
+  border-radius: 0;
+}
+
+.submitForm {
+  background-color: #007bff; /* Button background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submitForm:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Ensure containers take full height */
+.tab-content {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.owner-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+@media (min-width: 769px) {
+  .tab {
+    padding: 10px 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+  }
+}
