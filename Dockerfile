@@ -14,8 +14,11 @@ COPY backend/requirements.txt .
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
+ENV PYTHONPATH /backend
+
 # Copy the rest of the backend code
 COPY backend/ .  
+
 
 # Expose the port the app runs on
 EXPOSE 8000
