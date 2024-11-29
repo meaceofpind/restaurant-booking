@@ -60,7 +60,7 @@ const handleResponse = async (response) => {
       } // Returns array of restaurants
     },registerRestaurant: async (restaurantData) => {
       try {
-        const response = await fetch('${API_BASE_URL}/api/v1/entities', {
+        const response = await fetch(`${API_BASE_URL}/api/v1/entities`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const handleResponse = async (response) => {
     },
     getEntities: async () => {
       try {
-        const response = await fetch('${API_BASE_URL}/api/v1/entities', {
+        const response = await fetch(`${API_BASE_URL}/api/v1/entities`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ const handleResponse = async (response) => {
     bookTable: async (bookingData) => {
       try {
         // Prepare the booking data to send to the backend
-        const response = await fetch('${API_BASE_URL}/api/v1/book_table', {
+        const response = await fetch(`${API_BASE_URL}/api/v1/book_table`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
