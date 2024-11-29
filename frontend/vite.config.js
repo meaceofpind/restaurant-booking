@@ -6,12 +6,5 @@ export default defineConfig({
   server: {
     port: 10000,
     host: '0.0.0.0',
-    proxy: {
-      '/api/v1': {
-        target: process.env.REACT_APP_API_BASE_URL,
-        changeOrigin: true,
-        logLevel: 'debug',
-      },
-    },
   },
 });
